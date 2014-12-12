@@ -3,7 +3,7 @@
 # Directly from their website.
 
 onSw <- function(d = T) {
-  if (d == T) return('/tool')
+  if (d == T) return('tool/')
   else return('')
 }
 
