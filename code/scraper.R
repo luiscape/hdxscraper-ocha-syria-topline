@@ -26,7 +26,7 @@ downloadAndLoad <- function() {
   download.file(url, destfile = path, method = 'curl', quiet = TRUE)
   
   # loading
-  out <- read.csv(path)
+  out <- suppressWarnings(read.csv(path))
   return(out)
 }
 
