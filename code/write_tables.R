@@ -1,7 +1,7 @@
 ## Write tables in a db. ##
 library(sqldf)
 
-writeTables <- function(df = NULL, 
+writeTable <- function(df = NULL, 
                         table_name = NULL, 
                         db = NULL, 
                         testing = FALSE) {

@@ -19,7 +19,7 @@ source(paste0(onSw(), 'code/sw_status.R'))
 downloadAndLoad <- function() {
   # downloading
   # google doc link is on page source of: http://www.unocha.org/syria
-  cat('-----------------------------------------')
+  cat('-----------------------------------------\n')
   cat('Downloading and saving data locally ..\n')
   url = 'https://docs.google.com/spreadsheet/pub?key=0AgVVZWe9NC8wdDNfOHUyQlB6VWlFWWZhRGFNQW9zV3c&output=csv'
   path = paste0(onSw(), 'data/temp/data.csv')
@@ -49,7 +49,7 @@ reshapeData <- function() {
   writeTable(data, 'ocha_syria_topline_figures', 'scraperwiki')
   
   cat('Done. \n')
-  cat('-----------------------------------------')
+  cat('-----------------------------------------\n')
 }
 
 # Scraper wrapper
