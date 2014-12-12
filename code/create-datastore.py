@@ -38,7 +38,7 @@ def getResources(p):
                 "fields": [
                   { "id": "indicator", "type": "text" },
                   { "id": "dates", "type": "timestamp" },
-                  { "id": "value", "type": "integer" }
+                  { "id": "value", "type": "text" }
                 ]
             },
         }
