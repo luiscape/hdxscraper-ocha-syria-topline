@@ -15,7 +15,7 @@ import urllib
 import requests
 import sys
 import hashlib
-import update_timestamp
+from update_timestamp import updateTimestamp
 
 
 # Collecting configuration variables
