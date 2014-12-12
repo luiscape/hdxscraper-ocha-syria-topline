@@ -1,0 +1,5 @@
+scraperwiki
+ckanapi
+urllib
+requests
+hashlib
