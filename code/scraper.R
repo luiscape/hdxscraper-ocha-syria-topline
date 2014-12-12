@@ -19,7 +19,6 @@ source(paste0(onSw(), 'code/sw_status.R'))
 downloadAndLoad <- function() {
   # downloading
   # google doc link is on page source of: http://www.unocha.org/syria
-  cat('-----------------------------------------\n')
   cat('Downloading and saving data locally ..\n')
   url = 'https://docs.google.com/spreadsheet/pub?key=0AgVVZWe9NC8wdDNfOHUyQlB6VWlFWWZhRGFNQW9zV3c&output=csv'
   path = paste0(onSw(), 'data/temp/data.csv')
@@ -32,9 +31,11 @@ downloadAndLoad <- function() {
 
 # Reorganizing data
 reshapeData <- function() {
-  cat('Reshaping and cleaning data ..\n')
+  cat('-----------------------------------------\n')
   data <- downloadAndLoad()
-  data <- melt(data)
+  
+  cat('Reshaping and cleaning data ..\n')
+  data <- suppressWarnings(melt(data))
   path = paste0(onSw(), 'data/ocha-syria-topline-figures.csv')
   
   # Cleaning
@@ -42,9 +43,10 @@ reshapeData <- function() {
   data$type <- NULL
   data$variable <- sub('X', '', data$variable)
   data$variable <- gsub('\\.', '-', data$variable)
-  data$title <- gsub('<br/>', '', x$title)
+  data$title <- gsub('<br/>', '', data$title)
   names(data) <- c('indicator', 'dates', 'value')
   
+  # Writing output
   write.csv(data, path, row.names = F)
   writeTable(data, 'ocha_syria_topline_figures', 'scraperwiki')
   
