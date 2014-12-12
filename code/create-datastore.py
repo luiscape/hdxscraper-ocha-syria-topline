@@ -32,7 +32,7 @@ ckan = ckanapi.RemoteCKAN('http://data.hdx.rwlabs.org', apikey=apikey)
 def getResources(p):
     resources = [
         {
-            'resource_id': '0271d690-fffc-4f21-b13d-562292b9adb',
+            'resource_id': '0271d690-fffc-4f21-b13d-562292b9adb3',
             'path': p,
             'schema': {
                 "fields": [
