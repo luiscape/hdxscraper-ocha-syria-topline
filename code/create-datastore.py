@@ -38,7 +38,7 @@ def getResources(p):
                 "fields": [
                   { "id": "indicator", "type": "text" },
                   { "id": "dates", "type": "timestamp" },
-                  { "id": "values", "type": "integer" }
+                  { "id": "value", "type": "integer" }
                 ]
             },
         }
@@ -92,7 +92,7 @@ def updateDatastore(filename, resource_id, resource):
 
     # Checking if there is new data
     update_data = checkHash(filename=filename,
-                            first_run = True,
+                            first_run = False,
                             resource_id=resource_id)
     if (update_data == False):
         print "DataStore Status: No new data. Not updating datastore."
