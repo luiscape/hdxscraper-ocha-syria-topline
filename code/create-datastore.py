@@ -47,7 +47,7 @@ def getResources(p):
     return resources
 
 # Function to download a resource from CKAN.
-def downloadResource(filename, resource_id):
+def downloadResource(filename, resource_id, apikey):
 
     # querying
     url = 'https://data.hdx.rwlabs.org/api/action/resource_show?id=' + resource_id
@@ -92,7 +92,7 @@ def updateDatastore(filename, resource_id, resource):
 
     # Checking if there is new data
     update_data = checkHash(filename=filename,
-                            first_run = False,
+                            first_run = True,
                             resource_id=resource_id)
     if (update_data == False):
         print "DataStore Status: No new data. Not updating datastore."
@@ -145,7 +145,7 @@ def runEverything(p):
         resource = resources[i]  # getting the right resource
         resource_id = resource['resource_id']  # getting the resource_id
         print "Reading resource id: " + resource_id
-        downloadResource(p, resource_id)
+        downloadResource(p, resource_id, apikey)
         updateDatastore(p, resource_id, resource)
     print '-------------------------------------'
     print 'Done.'
