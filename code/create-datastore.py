@@ -36,9 +36,9 @@ def getResources(p):
             'path': p,
             'schema': {
                 "fields": [
-                  { "id": "indicator", "type": "text" },
-                  { "id": "dates", "type": "timestamp" },
-                  { "id": "value", "type": "text" }
+                  { "id": "Indicator", "type": "text" },
+                  { "id": "Dates", "type": "timestamp" },
+                  { "id": "Value", "type": "text" }
                 ]
             },
         }
