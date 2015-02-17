@@ -54,7 +54,7 @@ reshapeData <- function(p = NULL) {
   data$variable <- sub('X', '', data$variable)
   data$variable <- gsub('\\.', '-', data$variable)
   data$title <- gsub('<br/>', '', data$title)
-  names(data) <- c('indicator', 'dates', 'value')
+  names(data) <- c('Indicator', 'Dates', 'Value')
   
   cat('-----------------------------------------\n')
   
