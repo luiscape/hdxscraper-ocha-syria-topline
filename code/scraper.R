@@ -18,7 +18,7 @@ library(reshape2)
 
 # helper functions
 source(onSw('code/write_tables.R'))
-source(onSw('code/write_tables.R'))
+source(onSw('code/sw_status.R'))
 
 # Downlaod and load function
 downloadAndLoad <- function() {
